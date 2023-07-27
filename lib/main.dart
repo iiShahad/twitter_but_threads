@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_but_threads/features/auth/view/sign-up_screen.dart';
 import 'package:twitter_but_threads/theme/pallete.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Twitter but threads',
       theme: Pallete.theme,
-      home: const SizedBox(),
+      home: const SignUpScreen(),
     );
   }
 }
