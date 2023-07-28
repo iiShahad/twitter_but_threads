@@ -5,8 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:twitter_but_threads/core/models/user.dart';
 import 'package:twitter_but_threads/features/auth/controller/auth_controller.dart';
 import 'package:twitter_but_threads/features/auth/view/show_login_or_signup.dart';
-import 'package:twitter_but_threads/features/auth/view/sign-in_screen.dart';
-import 'package:twitter_but_threads/features/auth/view/sign-up_screen.dart';
 import 'package:twitter_but_threads/theme/pallete.dart';
 import 'firebase_options.dart';
 

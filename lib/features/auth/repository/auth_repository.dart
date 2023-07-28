@@ -45,7 +45,6 @@ class AuthRepository {
     String username,
     String email,
     String password,
-    String key,
   ) async {
     try {
       UserCredential userCredential = await _firebaseAuth
