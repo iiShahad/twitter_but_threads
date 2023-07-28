@@ -63,7 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   CustomTextField(
                     controller: _username,
-                    validator: (p0) => emailValidator(p0),
+                    validator: (p0) => nameValidator(p0),
                     icon: Icons.person,
                     hintText: "Username",
                     keyboardType: TextInputType.text,

@@ -8,8 +8,8 @@ class UserModel {
   final String email;
   final String profilePic;
   final String uid;
-  final List<String> followers;
-  final List<String> following;
+  final List followers;
+  final List following;
   UserModel({
     required this.username,
     required this.email,
@@ -24,8 +24,8 @@ class UserModel {
     String? email,
     String? profilePic,
     String? uid,
-    List<String>? followers,
-    List<String>? following,
+    List? followers,
+    List? following,
   }) {
     return UserModel(
       username: username ?? this.username,
@@ -54,8 +54,8 @@ class UserModel {
       email: map['email'] as String,
       profilePic: map['profilePic'] as String,
       uid: map['uid'] as String,
-      followers: List<String>.from((map['followers'] as List<String>)),
-      following: List<String>.from((map['following'] as List<String>)),
+      followers: List.from((map['followers'] as List)),
+      following: List.from((map['following'] as List)),
     );
   }
 
@@ -66,7 +66,7 @@ class UserModel {
 
   @override
   String toString() {
-    return 'User(username: $username, email: $email, profilePic: $profilePic, uid: $uid, followers: $followers, following: $following)';
+    return 'UserModel(username: $username, email: $email, profilePic: $profilePic, uid: $uid, followers: $followers, following: $following)';
   }
 
   @override
