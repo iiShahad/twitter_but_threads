@@ -15,6 +15,9 @@ class Pallete {
       elevation: 0,
     ),
     useMaterial3: true,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    hoverColor: Colors.transparent,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: primary,
     ),

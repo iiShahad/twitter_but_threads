@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_but_threads/features/auth/view/sign-in_screen.dart';
-import 'package:twitter_but_threads/features/auth/view/sign-up_screen.dart';
+import 'package:twitter_but_threads/features/auth/view/sign_in_screen.dart';
+import 'package:twitter_but_threads/features/auth/view/sign_up_screen.dart';
 
 class ShowLoginOrSignup extends StatefulWidget {
   const ShowLoginOrSignup({super.key});
