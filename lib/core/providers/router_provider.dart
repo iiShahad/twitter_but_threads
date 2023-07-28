@@ -2,6 +2,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:twitter_but_threads/features/auth/controller/auth_controller.dart';
 import 'package:twitter_but_threads/features/auth/view/show_login_or_signup.dart';
+import 'package:twitter_but_threads/features/home/views/home_screen.dart';
+import 'package:twitter_but_threads/features/search/views/search_screen.dart';
+import 'package:twitter_but_threads/features/controller/views/controller_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -13,21 +16,40 @@ final routerProvider = Provider<GoRouter>((ref) {
           userLoggedIn = true;
         }
       });
-
-      return userLoggedIn ? "/home" : "/auth";
+      if (!userLoggedIn) {
+        return "/auth";
+      } else {
+        return null;
+      }
     },
     routes: [
       GoRoute(
         path: "/auth",
         builder: (context, state) => const ShowLoginOrSignup(),
       ),
-      StatefulShellRoute.indexedStack(branches: [
-        StatefulShellBranch(routes: [GoRoute(path: "/home")]),
-        StatefulShellBranch(routes: [GoRoute(path: "/search")]),
-        StatefulShellBranch(routes: [GoRoute(path: "/new-post")]),
-        StatefulShellBranch(routes: [GoRoute(path: "/activity")]),
-        StatefulShellBranch(routes: [GoRoute(path: "/profile")]),
-      ])
+      StatefulShellRoute.indexedStack(
+          builder: (context, state, navigationShell) {
+            return ControllerScreen(
+              shell: navigationShell,
+            );
+          },
+          branches: [
+            StatefulShellBranch(routes: [
+              GoRoute(
+                path: "/home",
+                builder: (context, state) => const HomeScreen(),
+              )
+            ]),
+            StatefulShellBranch(routes: [
+              GoRoute(
+                path: "/search",
+                builder: (context, state) => const SearchScreen(),
+              )
+            ]),
+            // StatefulShellBranch(routes: [GoRoute(path: "/new-post")]),
+            // StatefulShellBranch(routes: [GoRoute(path: "/activity")]),
+            // StatefulShellBranch(routes: [GoRoute(path: "/chat")]),
+          ])
     ],
   );
 });
