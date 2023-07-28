@@ -4,15 +4,15 @@ import 'package:twitter_but_threads/core/common/custom_test_field.dart';
 import 'package:twitter_but_threads/core/utils.dart';
 import 'package:twitter_but_threads/features/auth/view/widgets/screen_toggle_button.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key, required this.toggleScreen});
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key, required this.toggleScreen});
   final void Function() toggleScreen;
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   final _formKey = GlobalKey<FormState>();
   final _email = TextEditingController();
   final _password = TextEditingController();
@@ -40,22 +40,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Create New Account",
+                "Log In",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
               ),
               const SizedBox(
                 height: 70,
               ),
-              CustomTextField(
-                controller: _username,
-                validator: (p0) => emailValidator(p0),
-                icon: Icons.person,
-                hintText: "Username",
-                keyboardType: TextInputType.text,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
+              //TODO: username or password input
               CustomTextField(
                 controller: _email,
                 validator: (p0) => emailValidator(p0),
@@ -86,8 +77,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               ScreenToggleButton(
                   onPressed: widget.toggleScreen,
-                  buttonLabel: "Log In",
-                  message: "Already have an account?")
+                  buttonLabel: "Sign Up",
+                  message: "Don't have an account?")
             ],
           ),
         ),
