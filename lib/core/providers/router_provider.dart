@@ -5,10 +5,10 @@ import 'package:twitter_but_threads/features/auth/controller/auth_controller.dar
 import 'package:twitter_but_threads/features/auth/view/show_login_or_signup.dart';
 import 'package:twitter_but_threads/features/chat/views/chat.dart';
 import 'package:twitter_but_threads/features/home/views/home_screen.dart';
-import 'package:twitter_but_threads/features/Profile/views/search_screen.dart';
+import 'package:twitter_but_threads/features/search/search_screen.dart';
 import 'package:twitter_but_threads/features/controller/views/controller_screen.dart';
 
-import '../../features/Profile/widgets/screens/profile_screen.dart';
+import '../../features/Profile/views/profile_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -48,12 +48,6 @@ final routerProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: "/search",
                 builder: (context, state) => const SearchScreen(),
-              )
-            ]),
-            StatefulShellBranch(routes: [
-              GoRoute(
-                path: "/Profile",
-                builder: (context, state) => const ProfileScreen(),
               )
             ]),
             StatefulShellBranch(routes: [

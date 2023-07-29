@@ -9,7 +9,6 @@ class ProfileScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final currentUser = ref.watch(userProvider);
-    print(currentUser?.bio);
     return Scaffold(
         body: SafeArea(
       child: Column(
