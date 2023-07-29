@@ -44,6 +44,17 @@ class ControllerScreen extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            NavigationDestination(
+              icon: Icon(
+                Icons.person,
+                color: Pallete.greyColor.withOpacity(0.5),
+              ),
+              label: "Profile",
+              selectedIcon: const Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+            ),
           ]),
     );
   }
