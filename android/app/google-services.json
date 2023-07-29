@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "909603425935",
-    "project_id": "twitter-but-threads",
-    "storage_bucket": "twitter-but-threads.appspot.com"
+    "project_number": "139748046396",
+    "project_id": "twitter-threads-88bf7",
+    "storage_bucket": "twitter-threads-88bf7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:909603425935:android:e1345a924e1105aa2e6afa",
+        "mobilesdk_app_id": "1:139748046396:android:9355abb76c273c29697539",
         "android_client_info": {
           "package_name": "com.example.twitter_but_threads"
         }
       },
       "oauth_client": [
         {
-          "client_id": "909603425935-8bvm2bvleeso3p99nsc9m4qh02kam679.apps.googleusercontent.com",
+          "client_id": "139748046396-h30ccmh2bb3fnq2a6p737tmns9jfctg6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDFqDdKPWY6TbP8FyvyWaG2DKIVhJPqZ0s"
+          "current_key": "AIzaSyCBFtdZx4TiAv6uwAxjY2w4C1_OaLYjWuM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "909603425935-8bvm2bvleeso3p99nsc9m4qh02kam679.apps.googleusercontent.com",
+              "client_id": "139748046396-h30ccmh2bb3fnq2a6p737tmns9jfctg6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

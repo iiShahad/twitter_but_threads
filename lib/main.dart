@@ -11,7 +11,9 @@ import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   //for stack error:
   runApp(const ProviderScope(child: MyApp()));
   FlutterError.demangleStackTrace = (StackTrace stack) {
@@ -26,15 +28,16 @@ class MyApp extends ConsumerWidget {
 
   void getData(WidgetRef ref, User data) async {
     final UserModel user = await ref
-        .read(authControllerProvider.notifier)
+        .watch(authControllerProvider.notifier)
         .getUserData(data.uid)
         .first;
-    ref.read(userProvider.notifier).state = user;
+    ref.read(userProvider.notifier).update((state) => user);
   }
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // ref.read(authControllerProvider.notifier).logout();
     final routerProv = ref.read(routerProvider);
     ref.watch(authStateChangeProvider).whenData((value) {
       if (value != null) {
@@ -47,5 +50,10 @@ class MyApp extends ConsumerWidget {
       theme: Pallete.theme,
       routerConfig: routerProv,
     );
+    // return MaterialApp(
+    //   title: 'Twitter but threads',
+    //   theme: Pallete.theme,
+    //   home: ProfileScreen(),
+    // );
   }
 }

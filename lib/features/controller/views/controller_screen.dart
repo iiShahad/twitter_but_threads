@@ -45,13 +45,35 @@ class ControllerScreen extends StatelessWidget {
               ),
             ),
             NavigationDestination(
-              icon: Icon(
-                Icons.person,
+              icon: ImageIcon(
+                const AssetImage("assets/icons/heart.png"),
                 color: Pallete.greyColor.withOpacity(0.5),
               ),
-              label: "Profile",
-              selectedIcon: const Icon(
-                Icons.person,
+              label: "home",
+              selectedIcon: const ImageIcon(
+                AssetImage("assets/icons/heart.png"),
+                color: Colors.white,
+              ),
+            ),
+            NavigationDestination(
+              icon: ImageIcon(
+                const AssetImage("assets/icons/message.png"),
+                color: Pallete.greyColor.withOpacity(0.5),
+              ),
+              label: "home",
+              selectedIcon: const ImageIcon(
+                AssetImage("assets/icons/message.png"),
+                color: Colors.white,
+              ),
+            ),
+            NavigationDestination(
+              icon: ImageIcon(
+                const AssetImage("assets/icons/profile.png"),
+                color: Pallete.greyColor.withOpacity(0.5),
+              ),
+              label: "home",
+              selectedIcon: const ImageIcon(
+                AssetImage("assets/icons/profile.png"),
                 color: Colors.white,
               ),
             ),

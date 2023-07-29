@@ -45,6 +45,10 @@ class AuthController extends StateNotifier<bool> {
     state = false;
   }
 
+  void updateUserData(String uid) {
+    _authRepository.updateUserData(uid);
+  }
+
   void signUp(
     BuildContext context,
     String name,

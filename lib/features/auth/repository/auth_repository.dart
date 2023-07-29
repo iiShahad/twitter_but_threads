@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:twitter_but_threads/core/models/user.dart';
 import '../../../core/constants/firebase.dart';
+import '../../../core/models/user.dart';
 import '../../../core/providers/firebase_provider.dart';
 import '../../../core/types/failure.dart';
 import '../../../core/types/type_defs.dart';
@@ -26,6 +26,7 @@ class AuthRepository {
 
   CollectionReference get _users =>
       _firebaseFirestore.collection(FirebaseConstants.usersCollection);
+
   Stream<User?> get authStateChange => _firebaseAuth.authStateChanges();
 
   //sign in
@@ -53,6 +54,7 @@ class AuthRepository {
         username: username,
         email: email,
         profilePic: "",
+        bio: "",
         uid: userCredential.user!.uid,
         followers: [],
         following: [],
@@ -66,9 +68,12 @@ class AuthRepository {
 
   Stream<UserModel> getUserData(String uid) {
     return _users.doc(uid).snapshots().map((event) {
-      final Map<String, dynamic> data = event.data() as Map<String, dynamic>;
-      return UserModel.fromMap(data);
+      return UserModel.fromMap(event.data() as Map<String, dynamic>);
     });
+  }
+
+  void updateUserData(String uid) async {
+    await _users.doc(uid).update({"bio": "meowwwwwwwwwwwwwwwwwwwwwwwww"});
   }
 
   void logout() async {

@@ -8,6 +8,7 @@ class UserModel {
   final String email;
   final String profilePic;
   final String uid;
+  final String bio;
   final List followers;
   final List following;
   UserModel({
@@ -15,6 +16,7 @@ class UserModel {
     required this.email,
     required this.profilePic,
     required this.uid,
+    required this.bio,
     required this.followers,
     required this.following,
   });
@@ -24,6 +26,7 @@ class UserModel {
     String? email,
     String? profilePic,
     String? uid,
+    String? bio,
     List? followers,
     List? following,
   }) {
@@ -32,6 +35,7 @@ class UserModel {
       email: email ?? this.email,
       profilePic: profilePic ?? this.profilePic,
       uid: uid ?? this.uid,
+      bio: bio ?? this.bio,
       followers: followers ?? this.followers,
       following: following ?? this.following,
     );
@@ -43,6 +47,7 @@ class UserModel {
       'email': email,
       'profilePic': profilePic,
       'uid': uid,
+      'bio': bio,
       'followers': followers,
       'following': following,
     };
@@ -54,6 +59,7 @@ class UserModel {
       email: map['email'] as String,
       profilePic: map['profilePic'] as String,
       uid: map['uid'] as String,
+      bio: map['bio'] as String,
       followers: List.from((map['followers'] as List)),
       following: List.from((map['following'] as List)),
     );
@@ -66,7 +72,7 @@ class UserModel {
 
   @override
   String toString() {
-    return 'UserModel(username: $username, email: $email, profilePic: $profilePic, uid: $uid, followers: $followers, following: $following)';
+    return 'UserModel(username: $username, email: $email, profilePic: $profilePic, uid: $uid, bio: $bio, followers: $followers, following: $following)';
   }
 
   @override
@@ -77,6 +83,7 @@ class UserModel {
         other.email == email &&
         other.profilePic == profilePic &&
         other.uid == uid &&
+        other.bio == bio &&
         listEquals(other.followers, followers) &&
         listEquals(other.following, following);
   }
@@ -87,6 +94,7 @@ class UserModel {
         email.hashCode ^
         profilePic.hashCode ^
         uid.hashCode ^
+        bio.hashCode ^
         followers.hashCode ^
         following.hashCode;
   }

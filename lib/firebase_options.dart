@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDFqDdKPWY6TbP8FyvyWaG2DKIVhJPqZ0s',
-    appId: '1:909603425935:android:e1345a924e1105aa2e6afa',
-    messagingSenderId: '909603425935',
-    projectId: 'twitter-but-threads',
-    storageBucket: 'twitter-but-threads.appspot.com',
+    apiKey: 'AIzaSyCBFtdZx4TiAv6uwAxjY2w4C1_OaLYjWuM',
+    appId: '1:139748046396:android:9355abb76c273c29697539',
+    messagingSenderId: '139748046396',
+    projectId: 'twitter-threads-88bf7',
+    storageBucket: 'twitter-threads-88bf7.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAx4HZE8Xl97141-F2IoiXXm_PKLqb8OeU',
-    appId: '1:909603425935:ios:eb838cb54f8b3e712e6afa',
-    messagingSenderId: '909603425935',
-    projectId: 'twitter-but-threads',
-    storageBucket: 'twitter-but-threads.appspot.com',
-    iosClientId: '909603425935-b56fj426t1lh127kia65m52gk5r4jk7q.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBPGXDSQDtvDgqqKtZ-0a2MibnSPK1fDyo',
+    appId: '1:139748046396:ios:20e678613f67acfe697539',
+    messagingSenderId: '139748046396',
+    projectId: 'twitter-threads-88bf7',
+    storageBucket: 'twitter-threads-88bf7.appspot.com',
+    iosClientId: '139748046396-bofeo26m157baje8csacbeo2bso8ithu.apps.googleusercontent.com',
     iosBundleId: 'com.example.twitterButThreads',
   );
 }
