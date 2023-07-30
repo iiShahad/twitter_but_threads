@@ -59,7 +59,8 @@ final routerProvider = Provider<GoRouter>((ref) {
             StatefulShellBranch(routes: [
               GoRoute(
                 path: "/chat",
-                builder: (context, state) => const ChatScreen(),
+                builder: (context, state) =>
+                    const ChatScreen(reciverId: "aLpahulTYNMspzaXoGQzpzdhyye2"),
               )
             ]),
             StatefulShellBranch(routes: [

@@ -42,14 +42,15 @@ class Message {
     };
   }
 
-  // factory Message.fromMap(Map<String, dynamic> map) {
-  //   return Message(
-  //     senderId: map['senderId'] as String,
-  //     recieverId: map['recieverId'] as String,
-  //     message: map['message'] as String,
-  //     timestamp: Timestamp as String,
-  //   );
-  // }
+  factory Message.fromMap(Map<String, dynamic> map) {
+    return Message(
+      senderId: map['senderId'] as String,
+      recieverId: map['recieverId'] as String,
+      message: map['message'] as String,
+      senderName: map["senderName"] as String,
+      timestamp: map['timestamp'] as Timestamp,
+    );
+  }
 
   @override
   String toString() {
