@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_but_threads/features/post/theme.dart';
+import 'package:helloworld/theme.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
   // This widget is the root of your application.
+  TextEditingController PostTW = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +22,15 @@ class MyApp extends StatelessWidget {
               margin: const EdgeInsets.all(10),
               child: ElevatedButton(
                 onPressed: () {
-                  
+                  DateTime now = new DateTime.now();
+                  DateTime date = new DateTime(now.year, now.month, now.day);
+                  CollectionReference cr =
+                      FirebaseFirestore.instance.collection('tweets');
+                  cr.add({
+                    'TW': PostTW.text,
+                    'time': date,
+                    'id': FirebaseAuth.instance.currentUser!.uid,
+                  });
                 },
                 child: const Center(
                   child: Text('Post'),
@@ -27,8 +39,11 @@ class MyApp extends StatelessWidget {
             ),
             appBar: AppBar(
               leadingWidth: 40,
-              leading: Icon(
-                Icons.close,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(Icons.close),
                 color: Theme.of(context).primaryColor,
               ),
               centerTitle: false,
@@ -81,6 +96,8 @@ class MyApp extends StatelessWidget {
                               decoration: InputDecoration(
                                   hintText: "Start a thread...",
                                   border: InputBorder.none),
+                              controller: PostTW,
+                              obscureText: true,
                             ),
                             Transform.rotate(
                                 angle: 1,
