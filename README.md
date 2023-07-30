@@ -1,16 +1,26 @@
-# twitter_but_threads
+### Twitter but threads
 
-A new Flutter project.
+An Application made with Flutter which is twitter but looks like threads app.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+Step 1:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Download or clone this repository using the link below:
+```
+https://github.com/iiShahad/twitter_but_threads
+```
+Step 2:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Go to project root and execute the following command in console/terminal to get the required dependencies:
+```
+flutter pub get
+```
+Step 3:
+
+Choose the device that you want to run the app with and execute the following command:
+```
+flutter run
+```
+
